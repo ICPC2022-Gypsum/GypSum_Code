@@ -1,0 +1,94 @@
+nmt:
+  model_type: "roberta"
+  model_name_or_path: "microsoft/codebert-base"
+  config_name:
+  tokenizer_name:
+  do_lower_case: true
+  data_workers: 0
+  random_seed: 1019
+  num_epochs: 2000
+  batch_size: 24
+  test_batch_size: 24
+  include_graph: true
+  include_token: true
+  lang: "java"
+  data_dir: "data"
+  src: "code.original_subtoken"
+  tgt: "javadoc_raw.original"
+  model_dir: "pretrain_models/java_full_raw"
+  model_name: "model"
+  checkpoint: false
+  pretrained:
+  max_examples: -1
+  uncase: true
+  max_characters_per_token: 30
+  valid_metric: "bleu"
+  display_iter: 25
+  sort_by_len: true
+  only_test: true
+  print_copy_info: false
+  print_one_target: false
+  log_file:
+  model:
+    use_cons: false
+    cons_dim: 256
+    max_len: 100
+    beam_size: 1
+    torchscript: false
+    use_code_type: false
+    code_tag_type: "subtoken"
+    max_source_length: 400
+    max_target_length: 100
+    emsize: 768
+    share_decoder_embeddings: true
+    model_type: transformer
+    num_head: 12
+    d_k: 64
+    d_v: 64
+    d_ff: 2048
+    src_pos_emb: false
+    tgt_pos_emb: true
+    max_relative_pos: 0
+    use_neg_dist: true
+    nlayers: 6
+    trans_drop: 0.2
+    dropout_emb: 0.2
+    dropout: 0.2
+    copy_attn: true
+    early_stop: 20
+    warmup_steps: 0
+    warmup_epochs: 0
+    optimizer: adam
+    learning_rate: 0.00005
+    lr_decay: 0.99
+    use_all_enc_layers: false
+    nhid: 200
+    bidirection: true
+    layer_wise_attn: false
+    n_characters: 260
+    char_emsize: 16
+    filter_size: 5
+    nfilters: 100
+    attn_type: general
+    coverage_attn: false
+    review_attn: false
+    force_copy: false
+    reuse_copy_attn: false
+    split_decoder: false
+    reload_decoder_state:
+    conditional_decoding: false
+    grad_clipping: 1.0
+    weight_decay: 0
+    momentum: 0
+
+    graph:
+      gat: true
+      data: "graph_split.pkl"
+      vocab_size: 50337
+      embed_size: 768
+      hidden_size: 768
+      node_types: 10
+      max_node_len: 300
+      num_layers: 4
+      dropout: 0.2
+      lstm_layer: 2
