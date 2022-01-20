@@ -21,59 +21,59 @@ PyTorch 1.7.0
    > For example, if you want to train java model from scrach with `cuda:0`, you can just run command `./run 0 java train`
 
 ## Structure
-
+```bash
 Gypsum-main
-├─ README.md
-├─ c2nl
-│	   ├─ __init__.py
-|	   ├─ encoders
-|    |  └─ ...
-|    ├─ decoders
-|    |  └─ ...
-|    ├─ eval
-|    |  └─ ...
-|    ├─ inputters
-|    |  └─ ...
-|    ├─ models
-|    |  └─ ...
-|    ├─ modules
-|    |  └─ ...
-|    ├─ objects
-|    |  └─ ...
-|    ├─ tokenizers
-|    |  └─ ...
-|    ├─ translator
-|    |  └─ ...
-|    ├─ utils
-|      └─ ...
-├─ code_clone_detection
-├─ code_search
-└─ model_implementation
-       ├─ baselines
-       ├─ TBCNN
-       |	├─ ...
-       ├─ TreeCaps
-       |	├─ ...
-       ├─ code2vec
-       |    ├─ data_process.py
-       |    └─ model.py
-       ├─ code2seq
-       |	├─ ...
-       ├─ GGNN
-       |  	├─ ...
-       ├─ ASTNN
-       |  	├─ ...
-       └─ TPTrans
-      		└─ ...
+├─- README.md
+├── c2nl
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── config.py
+│   ├── decoders
+│   ├── encoders
+│   ├── eval
+│   ├── inputters
+│   ├── models
+│   ├── modules
+│   ├── objects
+│   ├── tokenizers
+│   ├── translator
+│   └── utils
+├── config
+│   ├── general_config.yml
+│   ├── java_xxx_xxx.yml
+│   ├── ...
+├── data
+│   ├── java
+│   └── python
+├── evaluation
+│   ├── bleu
+│   ├── evaluate.py
+│   ├── meteor
+│   └── rouge
+├── gypsum
+│   ├── __pycache__
+│   ├── data
+│   ├── metor.ipynb
+│   ├── model.py
+│   ├── modules
+│   ├── predict.py
+│   ├── train.py
+│   └── utils
+├── modules
+│   ├── __pycache__
+│   └── attention_zoo.py
+├── preprocess
+│   ├── generate_java_graph.ipynb
+│   ├── java_graph_construct.py
+│   ├── python_ast.ipynb
+│   └── python_graph.py
+└── run
+```
 
 
-
-## How To Get Data 
-We have uploaded our dataset on google drive: [Dataset For Experiment](https://drive.google.com/file/d/1hQWQE6qm-qNGYKEPMoVMepMEZ72nXJL3/view?usp=sharing)
-
-### Data Directory Structure:
-![image](https://user-images.githubusercontent.com/79627998/109446893-7f4a2b80-7a7d-11eb-8526-59b5ac275658.png)
+## Data Availability 
+> We have uploaded our dataset on google drive: [Dataset For Experiment](https://drive.google.com/file/d/1hQWQE6qm-qNGYKEPMoVMepMEZ72nXJL3/view?usp=sharing)
 
 
-## How to run: 
-> python -u -u bert_nmt/train.py config/general_config.yml config/xxxx.yml
+## Acknowledgement
+> We borrowed and modified code from [DrQA](https://github.com/facebookresearch/DrQA), [OpenNMT](https://github.com/OpenNMT/OpenNMT-py). We would like to expresse our gratitdue for the authors of these repositeries.
