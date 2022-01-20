@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export PYTHONPATH=.
+
+python -u gypsum/train.py $1 config/$2_$3_$4.yml config/general_config.yml
