@@ -1,12 +1,11 @@
 # Code Implementation For Paper "GypSum: Learning Hybrid Representations for Code Summarization"
----
 
 ## Description
----
+
 We propose GypSum, a new deep learning model that learns hybrid representations using graph neural networks and a pre-trained programming and natural language model. GypSum uses two encoders to learn from the AST-based graph and the token sequence of source code, respectively, and modifies the encoder-decoder sublayer in the Transformer's decoder to fuse the representations.
 
 ## Requirement
----
+
 This repos is developed based on the environment of:
 
 Python 3.7
