@@ -12,6 +12,59 @@ Python 3.7
 
 PyTorch 1.7.0
 
+## Usage
+1. How to construct graph for python and java program?
+   > you can use the function `get_graph_from_source` from `proprocess/java(python)_graph_construction.py`
+   After processing the code, save the data as `pkl` into data folder. 
+2. How to run?
+   > ./run $GPU_ID$ $DATASET$ $TASK$ 
+   > For example, if you want to train java model from scrach with `cuda:0`, you can just run command `./run 0 java train`
+
+## Structure
+
+Gypsum-main
+├─ README.md
+├─ c2nl
+│	   ├─ __init__.py
+|	   ├─ encoders
+|    |  └─ ...
+|    ├─ decoders
+|    |  └─ ...
+|    ├─ eval
+|    |  └─ ...
+|    ├─ inputters
+|    |  └─ ...
+|    ├─ models
+|    |  └─ ...
+|    ├─ modules
+|    |  └─ ...
+|    ├─ objects
+|    |  └─ ...
+|    ├─ tokenizers
+|    |  └─ ...
+|    ├─ translator
+|    |  └─ ...
+|    ├─ utils
+|      └─ ...
+├─ code_clone_detection
+├─ code_search
+└─ model_implementation
+       ├─ baselines
+       ├─ TBCNN
+       |	├─ ...
+       ├─ TreeCaps
+       |	├─ ...
+       ├─ code2vec
+       |    ├─ data_process.py
+       |    └─ model.py
+       ├─ code2seq
+       |	├─ ...
+       ├─ GGNN
+       |  	├─ ...
+       ├─ ASTNN
+       |  	├─ ...
+       └─ TPTrans
+      		└─ ...
 
 
 
